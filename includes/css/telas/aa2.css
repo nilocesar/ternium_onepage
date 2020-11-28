@@ -1,0 +1,61 @@
+.containerAA5{
+  background-color: #e8e8e8;  
+}
+
+.step7{
+  position: absolute;
+  z-index: 9998;
+  width: 1366px;
+  height: 2219px;
+  background: url(../../img/step7.jpg) no-repeat;
+  background-size: 100%;
+}
+
+.step7 .cont1{
+  position: absolute;
+  top: 300px;
+  left: 195px;
+  position: absolute;
+  width:1050px;
+  border: 2px solid #24a7bf;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.step7 .cont2{
+  position: absolute;
+  top: 480px;
+  left: 55px;
+  width:1200px;
+}
+
+.step7 .cont3{
+  position: absolute;
+  top: 600px;
+  left: 55px;
+  width:1200px;
+  background-color: #24a7bf;
+  padding: 40px;
+}
+
+.step7 .cont3 div{
+  padding: 20px;
+  border: 3px dotted #fff;
+}
+
+.step7 .cont4{
+  position: absolute;
+  top: 1320px;
+  left: 90px;
+  width:750px;
+}
+
+.step7 .cont5{
+  position: absolute;
+  top: 2120px;
+  left: 90px;
+  width:1100px;
+}

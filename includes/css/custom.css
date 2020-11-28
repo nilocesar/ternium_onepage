@@ -1,0 +1,530 @@
+.baseInContainer {
+    position: fixed;
+    margin: 0px;
+    height: 664px;
+    width: 1181px;
+    background-color: rgb(206, 204, 204);
+    border-radius: 20px;
+    -webkit-box-shadow: 1px 2px 6px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 6px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 2px 6px -1px rgba(0, 0, 0, 0.75);
+    z-index: 0;
+}
+
+.logoBase {
+    position: absolute;
+    background: url(../img/logoWhite.png) no-repeat center;
+    background-size: 100%;
+    width: 106px;
+    height: 47px;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.logo2Base {
+    position: absolute;
+    background: #fff;
+    padding: 1px;
+    width: 93px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.logo2Base .logo2Ico {
+    position: relative;
+    background: url(../img/avante.png) no-repeat center;
+    background-size: 80%;
+    width: 90px;
+    height:93px;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.btnHelp {
+    position: absolute;
+    background: url('../img/btnHelp.png') -10px -10px no-repeat;
+    cursor: pointer;
+    width: 41px;
+    height: 41px;
+    top: 0;
+    left: 0;
+    z-index: 999999999999999999999999999999999999999;
+}
+
+.btnHelp:hover {
+    background-position-x: -71px;
+}
+
+.btnMenu {
+    position: fixed;
+    background: url('../img/btnMenu.png') -10px -10px no-repeat;
+    cursor: pointer;
+    width: 41px;
+    height: 41px;
+    top: 0;
+    left: 0;
+    z-index: 999999999999999999999999999999999999999;
+}
+
+.btnMenu:hover {
+    background-position-x: -71px;
+}
+
+.btnClose {
+    position: absolute;
+    background: url('../img/btnClose.png') -10px -10px;
+    cursor: pointer;
+    width: 41px;
+    height: 41px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999999999999999999999999999999999;
+}
+
+.btnClose:hover {
+    background-position-x: -71px;
+}
+
+.navInit {
+    display: none;
+    position: relative;
+    z-index: 999999999999999999999999999999999999999;
+}
+
+.btnPrev {
+    position: absolute;
+    cursor: pointer;
+    width: 55px;
+    height: 79px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999999999999999999999999999999999;
+}
+
+.btnPrev .icoSet {
+    position: relative;
+    background: url('../img/btnPrev.png') -10px -10px;
+    width: 55px;
+    height: 79px;
+}
+
+.btnPrev:hover div.icoSet{
+    background-position-x:-85px;
+}
+
+.btnNext {
+    position: absolute;
+    cursor: pointer;
+    width: 55px;
+    height: 79px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999999999999999999999999999999999;
+}
+
+.btnNext .icoSet {
+    position: relative;
+    background: url('../img/btnNext.png') -10px -10px;
+    width: 55px;
+    height: 79px;
+}
+
+.btnNext:hover div.icoSet{
+    background-position-x:-85px;
+}
+
+.btnPrevBranco {
+    position: absolute;
+    cursor: pointer;
+    width: 55px;
+    height: 79px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.btnPrevBranco .icoSet {
+    position: relative;
+    background: url('../img/btnPrevBranco.png') -10px -10px;
+    width: 55px;
+    height: 79px;
+}
+
+.btnPrevBranco:hover div.icoSet{
+    background-position-x:-85px;
+}
+
+.btnNextBranco {
+    position: absolute;
+    cursor: pointer;
+    width: 55px;
+    height: 79px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.btnNextBranco .icoSet {
+    position: relative;
+    background: url('../img/btnNextBranco.png') -10px -10px;
+    width: 55px;
+    height: 79px;
+}
+
+
+.btnNextBranco:hover div.icoSet{
+    background-position-x:-85px;
+}
+
+.setaInativa {
+    display: none !important;
+}
+
+
+/*
+    HELP
+*/
+
+.customBase .helpBase {
+    position: relative;
+    z-index: 999999999999999999999999999999999999999;
+    display:none;
+}
+
+.customBase .fundoHelp {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.90);
+    height: 664px;
+    width: 1181px;
+    border-radius: 20px;
+}
+
+.customBase .btnHelpH {
+    position: fixed;
+    background: url('../img/btnHelp.png') -10px -10px no-repeat;
+    width: 41px;
+    height: 41px;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.customBase .btnMenuH {
+    position: fixed;
+    background: url('../img/btnMenu.png') -10px -10px no-repeat;
+    width: 41px;
+    height: 41px;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.customBase .btnCloseH {
+    position: absolute;
+    background: url('../img/btnClose.png') -10px -10px;
+    width: 41px;
+    height: 41px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.customBase .btnPrevH {
+    position: absolute;
+    background: url('../img/btnPrev.png') -10px -10px;
+    width: 55px;
+    height: 79px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.customBase .btnNextH {
+    position: absolute;
+    background: url('../img/btnNext.png') -10px -10px;
+    width: 55px;
+    height: 79px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+
+.customBase .explAjuda {
+    position: absolute;
+    background-image: url(../img/help0.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 76px;
+    z-index: 999999;
+}
+
+
+.customBase .explMenu {
+    position: absolute;
+    background-image: url(../img/help1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    width: 425px;
+    height: 188px;
+    z-index: 999999;
+}
+
+.customBase .explSair {
+    position: absolute;
+    background-image: url(../img/help2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    width: 369px;
+    height: 251px;
+    z-index: 999999;
+}
+
+.customBase .explAnterior {
+    position: absolute;
+    background-image: url(../img/help3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    width: 288px;
+    height: 172px;
+    z-index: 999999;
+}
+
+.customBase .explProximo {
+    position: absolute;
+    background-image: url(../img/help4.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    width: 313px;
+    height: 150px;
+    z-index: 999999;
+}
+
+.customBase .explInstrucoes {
+    position: absolute;
+    background-image: url(../img/help5.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 270px;
+    z-index: 999999;
+}
+
+.customBase .btnCloseHelpBase{
+    position: fixed;
+    width: 200px;
+    top: 0;
+    left: 0;
+}
+
+.customBase .btnCloseHelp{
+    position: relative;
+    color: #393939;
+    background-color: #fff;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.customBase .btnCloseHelp:hover{
+    background-color: #117ABA;
+    color:#fff;   
+}
+
+/*
+    Menu
+*/
+
+.customBase .menuBase{
+    position: fixed;
+    z-index: 999999999999999999999999999999999999999;
+    height: 64px;
+    width: 1041px;
+    /* background-color: #fff; */
+    /* border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px; */
+    /* border-left: 3px solid #fff; */
+    /* border-bottom: 3px solid #fff; */
+    /* -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75); */
+    /* display:none; */
+    display: flex;
+    flex-direction: row;
+}
+
+.customBase .menuB{
+    position: relative;
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #fff; */
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 2px solid #9a2912;
+}
+
+.customBase .addBorder{
+    /* border-bottom-left-radius: 10px;
+    border-left: 2px solid #9a2912; */
+}
+.customBase .removeBorder{
+    border-bottom-right-radius: 0px;
+    /* border-right: 0px solid #fff; */
+}
+.customBase .menuB1{
+    border-left: 2px solid #9a2912;
+}
+
+.customBase .menuB1 .icoX{
+    background: url('../img/boy.svg') no-repeat; 
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.customBase .menuB1:hover{
+    background-color: #9a2912 !important;
+}
+
+.customBase .menuB2{
+    border-left: 2px solid rgb(8, 65, 100);
+}
+
+.customBase .menuB2 .icoX{
+    background: url('../img/view.svg') no-repeat; 
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.customBase .menuB2:hover{
+    background-color: rgb(8, 65, 100) !important;
+}
+
+
+.customBase .menuB3{
+    border-top-Right-radius: 20px;
+    border-left: 2px solid #215665;
+}
+
+.customBase .menuB3 .icoX{
+    background: url('../img/item3.png') no-repeat; 
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.customBase .menuB3:hover{
+    background-color: #215665 !important;
+}
+
+.customBase .menuB4{
+    border-top-Right-radius: 20px;
+    border-left: 2px solid #60395b;
+}
+
+.customBase .menuB4 .icoX{
+    background: url('../img/item4.png') no-repeat; 
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.customBase .menuB4:hover{
+    background-color: #60395b !important;
+}
+
+
+.customBase .menuItemInativo {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray; /* IE */
+    opacity: 0.8;
+    cursor: none;
+    pointer-events: none;
+}
+
+.customBase .menuB1.itemMAtivo {
+    /* border-left: 8px solid #9a2912; */
+    border-bottom: 8px solid #9a2912;
+} 
+
+.customBase .menuB2.itemMAtivo {
+    border-bottom: 8px solid rgb(8, 65, 100);
+} 
+
+.customBase .menuB3.itemMAtivo {
+    border-bottom: 8px solid #215665;
+} 
+
+.customBase .menuB4.itemMAtivo {
+    border-bottom: 8px solid #60395b;
+} 
+
+.customBase .itemMAtivo .text{
+    /* color: #9a2912 !important; */
+    font-family: "heavy" !important;
+}
+
+.customBase .btnCloseMenuBase{
+    position: fixed;
+    width: 200px;
+    top: 0;
+    left: 0;
+    z-index: 99999999999;
+}
+
+.customBase .btnCloseMenu{
+    position: absolute;
+    color: #393939;
+    background-color: #fff;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.customBase .btnCloseMenu:hover{
+    background-color: #60922f;
+    color:#fff;   
+}

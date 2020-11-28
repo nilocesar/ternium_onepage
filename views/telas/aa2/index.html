@@ -1,0 +1,107 @@
+<script>
+    window["aa2"] = {
+        indice: "aa2",
+        status: false
+    }
+
+    $("body").on('navegacaoComplete', function() {
+
+        if ((course.config[course.indice].id).toUpperCase() == ("aa2").toUpperCase()) {
+
+            var _tela = window[course.config[course.indice].id];
+            var _containerTela = $(".container" + (_tela.indice).toUpperCase());
+
+            //posiciona o elemento com base no tamanho real da imagem de fundo COVER
+            _containerTela.find(".posicionar").positionCSS({
+                containerTela: _containerTela,
+                divReferencia: _containerTela.find(".fundo"),
+                img_H: 3310,
+                img_W: 1366,
+
+            });
+
+            _containerTela.animate({
+                scrollTop: 0
+            }, 300, 'linear');
+
+            if (_tela.status == false) {
+                _tela.status = true;
+
+                _containerTela.find('.closeReturn').on('click', function() {
+                    course.indice = 0;
+                    $("body").attr("nav", "go");
+                    $("body").trigger("navegacao");
+                });
+
+
+            } else {
+
+            }
+
+        }
+    })
+</script>
+
+
+<div class="containerAA containerAA2 appear-animate">
+
+    <div class="closeReturn posicionar animated fadeIn delay0_4" px="1280" py="20">
+        <i class="fas fa-window-close"></i>
+    </div>
+
+    <div class="step step4 posicionar animated fadeIn delay0_4" px="0" py="0">
+        <div class="cont1">
+            <i class="fas fa-caret-right size50 verde mr20"></i>
+            <div class="size42 verde">
+                <div>
+                    Rotinas do Trabalho de Tutoria Pedagógica
+                </div>
+                <div class="size34 light mt10">
+                    Confira, abaixo, os cinco passos para a realização do trabalho de tutoria.
+                </div>
+            </div>
+        </div>
+
+        <div class="cont2">
+            <div class="size36 bold">
+                Levante informações sobre a escola.
+            </div>
+        </div>
+
+        <div class="cont3">
+            <div class="size36 bold">
+                Realize as sessões
+                <br>de tutoria.
+            </div>
+        </div>
+
+        <div class="cont4">
+            <div class="size36 bold">
+                Realize a reunião inicial com o tutorado.
+            </div>
+        </div>
+
+        <div class="cont5">
+            <div class="size36 bold">
+                Elabore o plano de formação com o tutorado.
+            </div>
+        </div>
+
+        <div class="cont6">
+            <div class="size36 bold">
+                Faça o diagnóstico
+                <br>pré-plano.
+            </div>
+        </div>
+
+        <div class="cont7 branco center">
+            <div class="size36 light">
+                <span class="bold size50">Atenção!</span>
+                <br> As atividades não acabam após o quinto passo.<br> Apenas se inicia um novo ciclo, voltando à <span class="book">etapa 3</span>.
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,290 @@
+<script>
+    window["aa1"] = {
+        indice: "aa1",
+        status: false
+    }
+
+    $("body").on('navegacaoComplete', function() {
+
+        if ((course.config[course.indice].id).toUpperCase() == ("aa1").toUpperCase()) {
+
+            var _tela = window[course.config[course.indice].id];
+            var _containerTela = $(".container" + (_tela.indice).toUpperCase());
+
+            //posiciona o elemento com base no tamanho real da imagem de fundo COVER
+            // _containerTela.find(".posicionar").positionCSS({
+            //     containerTela: _containerTela,
+            //     divReferencia: _containerTela.find(".fundo"),
+            //     img_H: 3310,
+            //     img_W: 1366,
+            // });
+
+            _containerTela.find('.toggle').removeClass('on');
+            if (_tela.status == false) {
+                _tela.status = true;
+
+                step(_containerTela, course, _tela);
+
+            } else {
+
+            }
+
+        }
+    })
+
+    function scrollStep(_containerTela, _step) {
+        var position = _containerTela.scrollTop();
+
+        _containerTela.animate({
+            scrollTop: position + _step.offset().top
+        }, 300, 'linear');
+    }
+
+
+    function step(_containerTela, course, _tela) {
+
+        // var vid = document.getElementById("video1");
+        // vid.onended = function() {
+        //     // course.liberarNavegacao();
+        // };
+
+
+        // _containerTela.find('.toggle').on('click', function() {
+
+        //     if ($(this).hasClass('on')) {
+        //         $(this).removeClass('on');
+        //     } else {
+        //         $(this).addClass('on');
+        //     }
+
+        //     _containerTela.attr("tabindex", -1).focus();
+
+        // });
+
+        _containerTela.find('.item').on('click', function() {
+            var _item = $(this).attr('step');
+            var _step = _containerTela.find('.' + _item);
+
+            // _containerTela.find('.toggle').removeClass('on');
+            // _containerTela.attr("tabindex", -1).focus();
+
+            //
+            scrollStep(_containerTela, _step);
+        });
+
+
+        // _containerTela.find('.it').on('click', function() {
+
+        //     var _tela = $(this).attr("tela");
+
+        //     $.each(course.config, function(indice, item) {
+
+        //         if ((item.id).toUpperCase() == _tela.toUpperCase()) {
+
+        //             course.indice = item.indice;
+        //             $("body").attr("nav", "go");
+        //             $("body").trigger("navegacao");
+        //         }
+        //     });
+
+        // });
+
+        // setTimeout(function() {
+        //     course.completeScorm();
+        // }, 1000 * 3);
+
+    }
+</script>
+
+
+<div class="containerAA containerAA1 appear-animate">
+
+    <div class="logoA"></div>
+    <div class="menuA up item" step="stepMenu">
+        <i class="fas fa-caret-up"></i> &emsp;MENÚ
+    </div>
+
+    <div class="stepHome">
+        <div class="mouseX"></div>
+
+        <div class="stepHomeTxt">
+            <div class="barra"></div>
+
+            <div class="ti">PROGRAMA DE DESAROLLO DE LÍDERES DE PLANTA</div>
+
+            <p class="sub">Vivimos en un mundo de cambios acelerados en que las competencias de liderazgo son esenciales para la sustentabilidad de los negocios. En Ternium no es diferente: creemos firmemente que lo que nos diferencia es nuestra gente y su capacidad
+                de responder ante estos desafíos.
+            </p>
+            <p>Ustedes, los Líderes de Planta, tienen un papel clave en el cumplimiento de los objetivos estratégicos cada vez más desafiantes que tenemos por delante. El PDLP ha sido pensado exclusivamente para ustedes, con metodologías de aprendizaje innovadoras
+                y contenidos específicos que podrán aplicar a su actividad diaria de manera inmediata.
+            </p>
+        </div>
+    </div>
+
+    <div class="stepMenu center cinza1 bold">
+        <div class="titM">MENÚ</div>
+        <div class="blocM center">
+            <div class="icoX icoX1 item" step="section1">
+                <div class="idx"></div>
+                <div class="txtX">
+                    MENSAJE DE<br> LA GESTIÓN
+                </div>
+            </div>
+            <div class="icoX icoX2 item" step="section2">
+                <div class="idx"></div>
+                <div class="txtX">
+                    COMPETENCIAS<br> TERNIUM
+                </div>
+            </div>
+            <div class="icoX icoX3 item" step="section3">
+                <div class="idx"></div>
+                <div class="txtX">
+                    JORNADA DE<br> APRENDIZAJE
+                </div>
+            </div>
+            <div class="icoX icoX4 item" step="section4">
+                <div class="idx"></div>
+                <div class="txtX">
+                    APRENDIZAJE<br> ACTIVO
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section1">
+        <div class="tiXS bold branco">
+            MENSAJE DE LA GESTIÓN
+        </div>
+
+        <div class="seleCX">
+            <div class="baseX1">
+                <div class="video1X">
+                    <video id="video1" controls width="100%" height="100%">
+                    <source src="anexos/video1.mp4">
+                </video>
+                </div>
+                <div class="txt1X bold cinza1">
+                    <h1>
+                        La relevancia del programa<br> para Líderes de Planta y<br> Ternium.
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section2">
+        <div class="tiXS bold branco">
+            COMPETENCIAS TERNIUM
+        </div>
+
+        <div class="seleCX">
+            <div class="baseX1">
+
+                <div class="txt1X branco">
+                    <div class="txtDD">
+                        Las competencias guían los conocimientos, las habilidades y las actitudes esperadas en la operación y la gestión de Ternium.
+                    </div>
+                    <div class="txtDD subDD">
+                        Tales competencias han sido una de las bases para el desarrollo del PDLP y deben practicarse y permanecer siempre vivas en el día a día.
+                    </div>
+                    <div class="mouseXS">
+                        <div class="animated infinite pulse"></div>
+                    </div>
+                </div>
+
+                <div class="video1X">
+                    <video id="video1" controls width="100%" height="100%">
+                    <source src="anexos/video1.mp4">
+                </video>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="section3">
+        <div class="tiXS bold branco">
+            JORNADA DE APRENDIZAJE
+        </div>
+
+        <div class="seleCX">
+            <div class="baseX1">
+
+                <div class="txt1X branco">
+                    <div class="blocoXDBarra"></div>
+                    <div class="blocoXD">
+                        Teniendo en cuenta el Modelo Educativo Ternium, la propuesta de aprendizaje para el PDLP se centra principalmente en los Resultados, la Experiencia y <br>en un Proceso de Desarrollo Continuo.
+                    </div>
+
+                    <div class="mapaD">
+                        <div class="mapaImg"></div>
+                        <div class="mapaPDF">
+                            <div class="icoPDF">
+                                <div class="icoSD"></div>
+                            </div>
+                            <div class="txtPDF">
+                                Haga clic en la imagen para ampliar o en el icono al lado para descargar el archivo PDF.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="imgX">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section4">
+        <div class="tiXS bold branco">
+            APRENDIZAJE ACTIVO
+        </div>
+
+        <div class="seleCX">
+            <div class="baseX1">
+
+                <div class="txt1X branco">
+                    <div class="txtDD">
+                        Para que su jornada sea aún más productiva y efectiva, le proponemos que a lo largo de su desarrollo, después de la capacitación en cada uno de los temas, registre qué y cómo está poniendo en práctica lo aprendido.
+                    </div>
+                    <div class="mouseXS">
+                        <div class="animated infinite pulse"></div>
+                    </div>
+                </div>
+
+                <div class="video1X">
+                    <video id="video1" controls width="100%" height="100%">
+                    <source src="anexos/video3.mp4">
+                </video>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="section5">
+        <div class="stepTxt">
+            <div class="ti bold">
+                PROTAGONISMO
+            </div>
+            <div class="sub">
+                La dedicación, la actitud activa y el protagonismo son fundamentales para que el proceso de aprendizaje sea efectivo y tenga un impacto positivo tanto para la rutina como para el crecimiento profesional y personal de cada individuo.
+            </div>
+        </div>
+        <div class="stepTxt2 bold">
+            ¡Esperamos que su jornada de aprendizaje sea una experiencia única y memorable!
+        </div>
+    </div>
+
+
+</div>

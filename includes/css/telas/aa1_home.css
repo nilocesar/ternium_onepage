@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.4em;
+}
+
+.containerAA {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* background-color: red; */
+}
+
+.logoA {
+    position: fixed;
+    width: 10em;
+    height: 6em;
+    background: url(../../img/logoA.svg) no-repeat;
+    background-size: contain;
+    z-index: 99999;
+    top: 0.2em;
+    left: 1.7em;
+    transition: all 0.4s;
+    z-index: 999999999999999999999999999999999 !important;
+}
+
+.stepHome {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../../img/homeA.png) no-repeat;
+    background-size: cover;
+    border-bottom: 1.3em solid #FF3300;
+    z-index: 99990;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.stepHome .mouseX {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    background: url(../../img/mouseA.svg) no-repeat;
+    background-size: contain;
+    bottom: -1.3em;
+    left: 50%;
+    margin-left: -2.5em;
+    transition: all 0.4s;
+}
+
+.stepHome .stepHomeTxt {
+    position: relative;
+    width: 58em;
+    height: 29em;
+    background-color: #FF9900;
+    padding: 2em 4em;
+    color: #fff;
+    transition: all 0.4s;
+    /* font-size: 30px; */
+}
+
+.stepHome .stepHomeTxt .barra {
+    position: absolute;
+    height: 25em;
+    width: 2em;
+    background-color: #FF3300;
+    z-index: 999999;
+    top: 6.4em;
+    left: 1em;
+}
+
+.stepHome .stepHomeTxt .ti {
+    font-size: 1.6em;
+}
+
+.stepHome .stepHomeTxt p {
+    font-size: 1.4em;
+}
+
+.stepHome .stepHomeTxt .sub {
+    margin: 1.2em 0;
+}

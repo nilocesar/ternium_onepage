@@ -1,0 +1,136 @@
+.section3 {
+    position: relative;
+    padding-top: 2em;
+}
+
+.section3 .tiXS {
+    position: relative;
+    width: 17em;
+    background-color: #FF3300;
+    padding: 0.1em 1.2em;
+    font-size: 2em;
+}
+
+.section3 .seleCX {
+    position: relative;
+    width: 100vw;
+    height: 40em;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 2em;
+}
+
+.section3 .baseX1 {
+    position: relative;
+    width: 70em;
+}
+
+.section3 .txt1X {
+    position: absolute;
+    width: 60em;
+    font-size: 1.2em;
+    top: 0em;
+    left: 0;
+    z-index: 999999999;
+}
+
+.section3 .blocoXD {
+    position: relative;
+    width: 50%;
+    background-color: #FF9900;
+    padding: 0.8em 3.2em 0.8em 0;
+    z-index: 999999999;
+}
+
+.section3 .blocoXD::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 40em;
+    background-color: #FF9900;
+    top: 0;
+    left: -40em;
+    z-index: -100;
+}
+
+.section3 .blocoXDBarra {
+    position: absolute;
+    top: 6.8em;
+    left: 13em;
+    width: 15em;
+    height: 2em;
+    background-color: #FF3300;
+    z-index: -100;
+}
+
+.section3 .mapaD {
+    position: absolute;
+    width: 40%;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .mapaImg {
+    position: relative;
+    width: 20em;
+    height: 15em;
+    background: url(../../img/mapaA.png) no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.section3 .mapaPDF {
+    position: relative;
+    width: 30em;
+    height: 3em;
+    margin-top: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.section3 .icoPDF {
+    position: relative;
+    width: 3em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF9900;
+}
+
+.section3 .txtPDF {
+    position: relative;
+    width: 22em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #666666;
+    font-size: 0.8em;
+    padding: 0.1em 0.2em;
+}
+
+.section3 .icoSD {
+    position: relative;
+    width: 1.8em;
+    height: 1.8em;
+    background: url(../../img/dowloadA.svg) no-repeat center;
+    background-size: contain;
+}
+
+.section3 .imgX {
+    position: absolute;
+    width: 37em;
+    height: 40em;
+    background: url(../../img/peopleA.png) no-repeat center;
+    background-size: cover;
+    right: 0;
+    top: -5em;
+    z-index: -1;
+}

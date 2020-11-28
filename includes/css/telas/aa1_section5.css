@@ -1,0 +1,47 @@
+.section5 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url(../../img/endA.png) no-repeat;
+    background-size: cover;
+    border-top: 1.3em solid #FF9900;
+    z-index: 99990;
+    transition: all 0.4s;
+}
+
+.section5 .stepTxt {
+    position: relative;
+    width: 58em;
+    height: 16em;
+    background-color: #FF9900;
+    padding: 2.5em;
+    color: #fff;
+    transition: all 0.4s;
+    margin-top: 20em;
+    z-index: 9;
+    /* font-size: 30px; */
+}
+
+.section5 .stepTxt2 {
+    position: relative;
+    width: 24em;
+    height: 6em;
+    background-color: #FF3300;
+    padding: 1.8em 1.2em;
+    color: #fff;
+    transition: all 0.4s;
+    z-index: -9;
+    font-size: 1.4em;
+    top: -1em;
+    left: 20em;
+    /* font-size: 30px; */
+}
+
+.section5 .ti {
+    font-size: 2.2em;
+}
+
+.section5 .sub {
+    font-size: 1.4em;
+    margin: 1em 0;
+}

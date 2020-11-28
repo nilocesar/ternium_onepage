@@ -1,0 +1,105 @@
+.menuA {
+    position: fixed;
+    width: 10em;
+    height: 2em;
+    color: #fff;
+    background-color: #FF3300;
+    border-left: 0.2vw solid #fff;
+    border-right: 0.2vw solid #fff;
+    border-top: 0.2vw solid #fff;
+    text-align: center;
+    z-index: 99999;
+    bottom: 0;
+    right: 4em;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 999999999999999999999999999999999 !important;
+}
+
+.menuA i {
+    font-size: 1.5em;
+}
+
+.stepMenu {
+    position: relative;
+    width: 100%;
+    height: 27em;
+    transition: all 0.4s;
+    padding-top: 2em;
+}
+
+.titM {
+    position: relative;
+    width: 100%;
+    font-size: 2.5em;
+}
+
+.blocM {
+    position: relative;
+    width: 100%;
+    height: 13em;
+    margin-top: 2.5em;
+    background-color: #D4D4D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocM .icoX {
+    position: relative;
+    width: 10em;
+    height: 10em;
+    background-color: #FF9900;
+    margin-right: 9.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    top: -3em;
+}
+
+.blocM .icoX:last-child {
+    margin-right: 0em;
+}
+
+.blocM .icoX1 .idx {
+    position: relative;
+    width: 6em;
+    height: 6em;
+    background: url(../../img/menu1x.svg) no-repeat center;
+    background-size: contain;
+}
+
+.blocM .icoX2 .idx {
+    position: relative;
+    width: 6em;
+    height: 6em;
+    background: url(../../img/menu2x.svg) no-repeat center;
+    background-size: contain;
+}
+
+.blocM .icoX3 .idx {
+    position: relative;
+    width: 6em;
+    height: 6em;
+    background: url(../../img/menu3x.svg) no-repeat center;
+    background-size: contain;
+}
+
+.blocM .icoX4 .idx {
+    position: relative;
+    width: 6em;
+    height: 6em;
+    background: url(../../img/menu4x.svg) no-repeat center;
+    background-size: contain;
+}
+
+.blocM .txtX {
+    position: absolute;
+    bottom: -3.5em;
+}

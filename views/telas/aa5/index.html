@@ -1,0 +1,91 @@
+<script>
+    window["aa5"] = {
+        indice: "aa5",
+        status: false
+    }
+
+    $("body").on('navegacaoComplete', function() {
+
+        if ((course.config[course.indice].id).toUpperCase() == ("aa5").toUpperCase()) {
+
+            var _tela = window[course.config[course.indice].id];
+            var _containerTela = $(".container" + (_tela.indice).toUpperCase());
+
+            //posiciona o elemento com base no tamanho real da imagem de fundo COVER
+            _containerTela.find(".posicionar").positionCSS({
+                containerTela: _containerTela,
+                divReferencia: _containerTela.find(".fundo"),
+                img_H: 3310,
+                img_W: 1366,
+
+            });
+
+            _containerTela.animate({
+                scrollTop: 0
+            }, 300, 'linear');
+
+            if (_tela.status == false) {
+                _tela.status = true;
+
+                _containerTela.find('.closeReturn').on('click', function() {
+                    course.indice = 0;
+                    $("body").attr("nav", "go");
+                    $("body").trigger("navegacao");
+                });
+
+
+            } else {
+
+            }
+
+        }
+    })
+</script>
+
+
+<div class="containerAA containerAA5 appear-animate">
+
+    <div class="closeReturn posicionar animated fadeIn delay0_4" px="1280" py="20">
+        <i class="fas fa-window-close"></i>
+    </div>
+
+    <div class="step step7 posicionar animated fadeIn delay0_4" px="0" py="0">
+        <div class="cont1 verde">
+            <i class="fas fa-caret-right size50 mr20"></i>
+            <div class="bold size34">
+                Vamos relembrar o que aconteceu na atividade I 
+                que você realizou e ver se ela se encaixa neste cenário?
+            </div>
+        </div>
+        <div class="cont2">
+            <div class="size34 bold">
+                Ao analisar o recreio, o gestor realizou um registro descritivo dos fatos observados, sem julgamentos prévios. Veja:
+            </div>
+        </div>
+        <div class="cont3">
+            <div class="size30 branco">
+                Estudantes correm, brincam de pega-pega, jogam bola feita de papel no pátio. Passam correndo na merenda para alimentação; em sua maioria, comem sem interrupções e na sequência se reúnem para brincar.<br> - Três quedas aconteceram enquanto
+                corriam, um estudante machucou o joelho. Houve uma briga entre dois estudantes (eles se esbarraram e começou a briga).<br> - Há pequenos grupos de estudantes que sentam e conversam.<br> - Há uma demora de cinco a dez minutos para todos
+                os professores retirarem os estudantes do pátio.<br> - Três estudantes do 7º ano fugiram no período do intervalo. Saíram pelo portão da escola. Isso é a terceira vez que acontece em dois meses.<br> - Os dois inspetores ficam boa parte
+                do recreio conversando entre si e interagem com os estudantes quando há uma ocorrência. Gritam para os estudantes pararem de correr com frequência.<br> - Não há participação da equipe gestora e de professores nos intervalos.<br> - Alguns
+                estudantes solicitaram o rádio para ouvir música em dois dias da semana.
+            </div>
+        </div>
+        <div class="cont4">
+            <div class="size30 book">
+                Pense: se o registro apresentasse "os estudantes não gostam do recreio“, "os inspetores não cumprem com seu papel", provavelmente mudaria o seu olhar para a cena.
+                <br><br> O fato dos estudantes correrem, brigarem ou se machucarem no intervalo não necessariamente quer dizer que o intervalo não é divertido e que eles não gostam.
+                <br><br> O mesmo aconteceria sobre as análises dos inspetores: se no registro estivesse descrito que não cumprem o seu papel, não estaria apontando o que realmente eles fazem nos intervalos.
+                <br><br> A análise seria de outro ponto de vista, a partir de generalizações, de outras experiências que poderiam induzir a conclusões falsas.
+                <br><br> Neste caso, o fato dos inspetores conversarem entre si e não interagirem com os estudantes não necessariamente diz que não cumprem seu papel, assim é possível levantar outra hipótese: eles sabem qual é o seu papel?
+            </div>
+        </div>
+        <div class="cont5 roxo">
+            <div class="bold size46">
+                Percebeu por que é importante coletar evidências?
+            </div>
+        </div>
+    </div>
+
+
+</div>
