@@ -11,19 +11,11 @@
             var _tela = window[course.config[course.indice].id];
             var _containerTela = $(".container" + (_tela.indice).toUpperCase());
 
-            //posiciona o elemento com base no tamanho real da imagem de fundo COVER
-            // _containerTela.find(".posicionar").positionCSS({
-            //     containerTela: _containerTela,
-            //     divReferencia: _containerTela.find(".fundo"),
-            //     img_H: 3310,
-            //     img_W: 1366,
-            // });
-
-            _containerTela.find('.toggle').removeClass('on');
+            verifyComplete(_containerTela, course);
             if (_tela.status == false) {
                 _tela.status = true;
 
-                step(_containerTela, course, _tela);
+                controle(_containerTela, course, _tela);
 
             } else {
 
@@ -31,6 +23,22 @@
 
         }
     })
+
+    function verifyComplete(_containerTela, course) {
+
+        var _complete = 0;
+        if (course.scorm_get_suspendData("tela1")) {
+            _complete += 1;
+        }
+        if (course.scorm_get_suspendData("tela2")) {
+            _complete += 1;
+        }
+
+        if (_complete == 2) {
+            course.completeScorm();
+        }
+
+    }
 
     function scrollStep(_containerTela, _step) {
         var position = _containerTela.scrollTop();
@@ -41,7 +49,7 @@
     }
 
 
-    function step(_containerTela, course, _tela) {
+    function controle(_containerTela, course, _tela) {
 
         _containerTela.visibleElement(0.2); // jquery - delay pradrão
 

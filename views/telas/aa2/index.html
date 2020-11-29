@@ -38,6 +38,9 @@
             function controle() {
 
                 _containerTela.find('.closeReturn').on('click', function() {
+
+                    course.scorm_set_suspendData("tela1", 1);
+
                     course.indice = 0;
                     $("body").attr("nav", "go");
                     $("body").trigger("navegacao");
@@ -370,7 +373,7 @@
             </div>
         </div>
 
-        <div class="closeXD closeReturn">
+        <div class="closeXD closeReturn animated zoomIn delay0_6">
             <i class="far fa-times-circle animated infinite pulse"></i>
         </div>
 

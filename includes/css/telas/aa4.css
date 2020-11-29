@@ -1,0 +1,116 @@
+.containerAA4 {}
+
+.containerAA4 .bloco {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerAA4 .stepX {
+    position: relative;
+    height: 80vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #fff; */
+}
+
+.containerAA4 .tiX {
+    font-size: 1.4em;
+}
+
+.containerAA4 .tiX div {
+    padding-bottom: 0.6em;
+}
+
+.containerAA4 .list {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10em;
+    margin-top: 2em;
+    /* align-items: center; */
+}
+
+.containerAA4 .itemX {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-bottom: 1em;
+}
+
+.containerAA4 .icoD {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6em;
+    height: 6em;
+    background-color: #FF9900;
+}
+
+.containerAA4 .itemX1 .ias {
+    position: relative;
+    width: 4em;
+    height: 4em;
+    background: url(../../img/ico1XA.svg) no-repeat center;
+    background-size: contain;
+}
+
+.containerAA4 .itemX2 .ias {
+    position: relative;
+    width: 4em;
+    height: 4em;
+    background: url(../../img/ico2XA.svg) no-repeat center;
+    background-size: contain;
+}
+
+.containerAA4 .itemX3 .ias {
+    position: relative;
+    width: 4em;
+    height: 4em;
+    background: url(../../img/ico3XA.svg) no-repeat center;
+    background-size: contain;
+}
+
+.containerAA4 .itemX4 .ias {
+    position: relative;
+    width: 4em;
+    height: 4em;
+    background: url(../../img/ico4XA.svg) no-repeat center;
+    background-size: contain;
+}
+
+.containerAA4 .txtD {
+    font-size: 1.4em;
+    padding-left: 1.2em;
+}
+
+.containerAA4 .closeXD {
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5em;
+    color: #fff;
+    top: 1vw;
+    right: 4vw;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.containerAA4 .closeXD:hover {
+    color: rgba(255, 255, 255, 0.531);
+}

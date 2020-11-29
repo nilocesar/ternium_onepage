@@ -11,86 +11,84 @@
             var _tela = window[course.config[course.indice].id];
             var _containerTela = $(".container" + (_tela.indice).toUpperCase());
 
-            //posiciona o elemento com base no tamanho real da imagem de fundo COVER
-            _containerTela.find(".posicionar").positionCSS({
-                containerTela: _containerTela,
-                divReferencia: _containerTela.find(".fundo"),
-                img_H: 3310,
-                img_W: 1366,
-
-            });
-
-            _containerTela.animate({
-                scrollTop: 0
-            }, 300, 'linear');
-
             if (_tela.status == false) {
                 _tela.status = true;
 
                 _containerTela.find('.closeReturn').on('click', function() {
+
+                    course.scorm_set_suspendData("tela2", 1);
+
                     course.indice = 0;
                     $("body").attr("nav", "go");
                     $("body").trigger("navegacao");
                 });
 
-
             } else {
 
             }
+
 
         }
     })
 </script>
 
 
-<div class="containerAA containerAA4 appear-animate">
+<div class="containerAA4">
 
-    <div class="closeReturn posicionar animated fadeIn delay0_4" px="1280" py="20">
-        <i class="fas fa-window-close"></i>
-    </div>
+    <div class="bloco animated fadeIn delay0_4" px="0" py="0">
 
-    <div class="step step6 posicionar animated fadeIn delay0_4" px="0" py="0">
-        <div class="cont1 verde">
-            <i class="fas fa-caret-right size50 mr20"></i>
-            <div class="bold size50">
-                Observação do gestor escolar em ação
-            </div>
-        </div>
-        <div class="cont2">
-            <div class="size30">
-                <span class="bold roxo">Acompanhar o gestor em suas atribuições do dia a dia</span> permite conhecer seus saberes sobre os processos de gestão e seus conhecimentos gerais de educação e levantar quais comportamentos atingiram o padrão de
-                uma habilidade da matriz de competências.
-                <br><br> Quanto mais diversificado for o acompanhamento, mais chances você, como formador, terá para identificar suas habilidades e quais você precisa desenvolver.
-            </div>
-        </div>
-        <div class="cont3">
-            <div class="size30">
-                <span class="bold roxo">Acompanhar o diretor em reuniões
-                    com pais, funcionários, equipe de
-                    gestão</span>, em uma <span class="bold roxo">caminhada pela
-                    escola</span>, em um momento de <span class="bold roxo">observação
-                    da sala de aula, do intervalo</span>, pode oferecer elementos para ler os contextos da escola ao mesmo tempo em que é possível levantar dados sobre o que o gestor escolar pensa sobre o ambiente escolar.
-                <br><br> É imprescindível que, no momento de acompanhamento, o formador não perca seu foco: <span class="bold roxo">levantar os saberes do
-                    gestor sem julgamentos</span>.
-            </div>
-        </div>
-        <div class="cont4">
-            <div class='contBX'>
-                <div class="size40 bold branco cont20x">
-                    <div><i class="fas fa-caret-right size50 mr20"></i></div>
-                    <div>Para lembrar:</div>
+        <div class="stepX branco">
+            <div class="tiX bold animated fadeInUp delay0_4">
+                <div>
+                    Al final de cada tema, es importante que indique cómo han sido sus prácticas diarias, las cuales deben guiarse por los valores y las competencias Ternium.
                 </div>
-                <div class="size30 branco mt10">
-                    •&nbsp;&nbsp;&nbsp;&nbsp;É bem provável que você tenha uma imagem pré-concebida do que seja um “bom” gestor. Esteja aberto a diferentes estilos de liderança.<br><br> •&nbsp;&nbsp;&nbsp;&nbsp;O modelo ou missão da escola/região do gestor
-                    podem não estar alinhados às suas crenças e aos seus valores.<br><br> •&nbsp;&nbsp;&nbsp;&nbsp;Prepare-se para ser receptivo às novas políticas e condições de acordo com as quais o gestor opera.<br><br> •&nbsp;&nbsp;&nbsp;&nbsp;Críticas
-                    às novas políticas e explicações sobre como as antigas políticas funcionavam são práticas pouco comuns entre os atuais líderes escolares.<br><br> •&nbsp;&nbsp;&nbsp;&nbsp;No momento das observações, há duas habilidades imprescindíveis
-                    de comunicação que o apoiarão no levantamento dos saberes: <span class="bold">
-                    escuta ativa e questionamentos.</span>
+                <div>
+                    Preguntas que podrá contestar:
                 </div>
             </div>
+            <div class="list">
+                <div class="itemX itemX1">
+                    <div class="icoD animated zoomIn delay1_0">
+                        <div class="ias"></div>
+                    </div>
+                    <div class="txtD animated fadeInRight delay1_2">
+                        ¿Cuáles fueron los puntos más relevantes para su día a día?
+                    </div>
+                </div>
+
+                <div class="itemX itemX2">
+                    <div class="icoD animated zoomIn delay1_4">
+                        <div class="ias"></div>
+                    </div>
+                    <div class="txtD animated fadeInRight delay1_6">
+                        ¿Cuáles son los cambios o las mejoras que planea alcanzar?
+                    </div>
+                </div>
+
+                <div class="itemX itemX3">
+                    <div class="icoD animated zoomIn delay1_8">
+                        <div class="ias"></div>
+                    </div>
+                    <div class="txtD animated fadeInRight delay2_0">
+                        ¿Cuáles son los impactos percibidos a partir de la práctica de lo que ha aprendido?
+                    </div>
+                </div>
+
+                <div class="itemX itemX4">
+                    <div class="icoD animated zoomIn delay2_2">
+                        <div class="ias"></div>
+                    </div>
+                    <div class="txtD animated fadeInRight delay2_4">
+                        Haga registros semanales de sus retos y evolución.
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 
+    <div class="closeXD closeReturn animated zoomIn delay2_6">
+        <i class="far fa-times-circle animated infinite pulse"></i>
+    </div>
 
 </div>
