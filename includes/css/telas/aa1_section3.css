@@ -14,7 +14,7 @@
 .section3 .seleCX {
     position: relative;
     width: 100vw;
-    height: 40em;
+    height: 47em;
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -29,7 +29,7 @@
 .section3 .txt1X {
     position: absolute;
     width: 60em;
-    font-size: 1.2em;
+    font-size: 1.4em;
     top: 0em;
     left: 0;
     z-index: 999999999;
@@ -67,7 +67,7 @@
 .section3 .mapaD {
     position: absolute;
     width: 40%;
-    margin-top: 2em;
+    margin-top: 3em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,8 +76,8 @@
 
 .section3 .mapaImg {
     position: relative;
-    width: 20em;
-    height: 15em;
+    width: 16em;
+    height: 10em;
     background: url(../../img/mapaA.png) no-repeat center;
     background-size: contain;
     cursor: pointer;
@@ -85,18 +85,29 @@
 
 .section3 .mapaPDF {
     position: relative;
-    width: 30em;
-    height: 3em;
-    margin-top: 0em;
+    width: 22.8em;
+    height: 2.8em;
+    margin-top: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 
+.section3 .mapaPDF a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 51, 0, 0);
+}
+
+.section3 .mapaPDF:hover .icoPDF {
+    background-color: #db870b;
+}
+
 .section3 .icoPDF {
     position: relative;
-    width: 3em;
+    width: 2.8em;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -127,10 +138,28 @@
 .section3 .imgX {
     position: absolute;
     width: 37em;
-    height: 40em;
+    height: 45em;
     background: url(../../img/peopleA.png) no-repeat center;
     background-size: cover;
     right: 0;
     top: -5em;
     z-index: -1;
+}
+
+@media (max-width: 1280px) {
+    .section3 .baseX1 {
+        width: 92em;
+    }
+    .section3 .blocoXDBarra {
+        left: 20em;
+    }
+    .section3 .blocoXD {
+        margin-left: 6.5em;
+    }
+    .section3 .imgX {
+        width: 45em;
+    }
+    .section3 .mapaD {
+        margin-left: 6.5em;
+    }
 }

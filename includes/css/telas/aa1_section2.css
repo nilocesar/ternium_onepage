@@ -14,7 +14,7 @@
 .section2 .seleCX {
     position: relative;
     width: 100vw;
-    height: 20em;
+    height: 25em;
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -51,7 +51,7 @@
 }
 
 .section2 .txt1X .txtDD {
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .section2 .txt1X .subDD {
@@ -74,6 +74,10 @@
     left: 12em;
 }
 
+.section2 .mouseXS:hover {
+    background-color: #db870b;
+}
+
 .section2 .mouseXS div {
     position: relative;
     width: 2.2em;
@@ -89,7 +93,7 @@
     z-index: 999999;
     /* left: 30em; */
     right: 0;
-    top: -5em;
+    top: -3em;
 }
 
 .section2 .video1X video {

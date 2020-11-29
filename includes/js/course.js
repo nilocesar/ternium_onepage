@@ -1,6 +1,6 @@
 define(['jquery', 'jquery_scorm', 'modernizr', 'imagesloaded', 'velocity', 'componentes_jquery',
     "transform2d_jquery", "transform3d_jquery", "transit_jquery", "easing_jquery", 'detectmobilebrowser',
-    'easepack', "tweenMax", 'slider', 'easydrag', 'blast', 'wow', 'behaviorAdapt'
+    'easepack', "tweenMax", 'slider', 'easydrag', 'blast', 'viewElement', 'behaviorAdapt'
 ], function($) {
 
     'use strict';
@@ -250,17 +250,7 @@ define(['jquery', 'jquery_scorm', 'modernizr', 'imagesloaded', 'velocity', 'comp
             $("body").attr("nav", "init");
             $("body").trigger("navegacao");
 
-            // var wow = new WOW({
-            //     boxClass: 'wow',
-            //     animateClass: 'animated',
-            //     offset: 90,
-            //     mobile: false,
-            //     live: true
-            // });
 
-            // if ($("body").hasClass("appear-animate")) {
-            //     wow.init();
-            // }
 
         }
 

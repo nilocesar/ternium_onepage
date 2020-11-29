@@ -11,21 +11,31 @@
             var _tela = window[course.config[course.indice].id];
             var _containerTela = $(".container" + (_tela.indice).toUpperCase());
 
-            //posiciona o elemento com base no tamanho real da imagem de fundo COVER
-            _containerTela.find(".posicionar").positionCSS({
-                containerTela: _containerTela,
-                divReferencia: _containerTela.find(".fundo"),
-                img_H: 3310,
-                img_W: 1366,
 
-            });
-
-            _containerTela.animate({
-                scrollTop: 0
-            }, 300, 'linear');
-
+            reset();
             if (_tela.status == false) {
                 _tela.status = true;
+
+
+
+                controle();
+
+            } else {
+
+            }
+
+            function reset() {
+
+
+                var _step = 1;
+                _containerTela.find('.bloco').attr('step', _step);
+                confereNav(_step);
+
+
+
+            };
+
+            function controle() {
 
                 _containerTela.find('.closeReturn').on('click', function() {
                     course.indice = 0;
@@ -33,8 +43,115 @@
                     $("body").trigger("navegacao");
                 });
 
+                nav();
+                blockList();
 
-            } else {
+            };
+
+            function nav() {
+
+                _containerTela.find('.btnVolt').on('click', function() {
+
+                    var _stepCurrent = _containerTela.find('.bloco').attr('step');
+                    confereNav(parseInt(_stepCurrent) - 1);
+
+                });
+
+
+                _containerTela.find('.btnAvanc').on('click', function() {
+
+                    var _stepCurrent = _containerTela.find('.bloco').attr('step');
+                    confereNav(parseInt(_stepCurrent) + 1);
+
+                });
+
+            }
+
+            function confereNav(_step) {
+                _containerTela.find('.bloco').attr('step', _step);
+
+                var _allStep = _containerTela.find('.stepX').length;
+
+                _containerTela.find('.btnVolt').css('display', 'block');
+                _containerTela.find('.btnAvanc').css('display', 'none');
+
+                _containerTela.find('.stepX').css('display', 'none');
+                _containerTela.find('.step' + _step).css('display', 'flex');
+
+
+
+
+
+                if (_step == 1) {
+                    _containerTela.find('.btnVolt').css('display', 'none');
+
+                    if (_containerTela.find('.step' + _step).attr('ativo')) {
+                        _containerTela.find('.btnAvanc').css('display', 'block');
+                    }
+
+                } else if (_step == _allStep) {
+                    _containerTela.find('.btnAvanc').css('display', 'none');
+
+                } else {
+                    _containerTela.find('.btnVolt').css('display', 'block');
+                    if (_containerTela.find('.step' + _step).attr('ativo')) {
+                        _containerTela.find('.btnAvanc').css('display', 'block');
+                    }
+                }
+
+
+
+
+            }
+
+
+            function blockList() {
+
+                _containerTela.find('.closeReturn').css('display', 'none');
+
+                _containerTela.find('.listS .txtS').css('display', "none");
+                _containerTela.find('.listS .quadS').addClass('inativoQuadS');
+                _containerTela.find('.listS .itemS1 .quadS').removeClass('inativoQuadS');
+                _containerTela.find('.listS .itemS1 .quadS').addClass('animated infinite pulse');
+
+                _containerTela.find('.listS .quadS').on('click', function() {
+
+                    $(this).css('pointer-events', 'none');
+                    var _parent = $(this).parent();
+                    var _parent2 = $(this).parent().parent();
+                    var _item = parseInt(_parent.attr('item'));
+                    var _next = _item + 1;
+
+                    var _length = _parent2.find('.itemS').length;
+
+
+                    $(this).removeClass('animated infinite pulse');
+
+                    _parent.find('.txtS').css('display', 'block');
+
+                    _parent2.find('.itemS' + _next + " .quadS").removeClass('inativoQuadS');
+                    _parent2.find('.itemS' + _next + " .quadS").addClass('animated infinite pulse');
+
+
+                    if (_item == _length) {
+
+                        var _stepCurrent = _containerTela.find('.bloco').attr('step');
+                        var _allStep = _containerTela.find('.stepX').length;
+
+                        if (_stepCurrent != _allStep) {
+                            _containerTela.find('.btnAvanc').css('display', 'block');
+                        } else {
+                            _containerTela.find('.closeReturn').css('display', 'flex');
+                        }
+
+
+
+                        _containerTela.find('.step' + _stepCurrent).attr('ativo', 1);
+                    }
+
+
+                });
+
 
             }
 
@@ -43,62 +160,218 @@
 </script>
 
 
-<div class="containerAA containerAA2 appear-animate">
+<div class="containerAA2">
 
-    <div class="closeReturn posicionar animated fadeIn delay0_4" px="1280" py="20">
-        <i class="fas fa-window-close"></i>
-    </div>
+    <div class="bloco animated fadeIn delay0_4" px="0" py="0">
 
-    <div class="step step4 posicionar animated fadeIn delay0_4" px="0" py="0">
-        <div class="cont1">
-            <i class="fas fa-caret-right size50 verde mr20"></i>
-            <div class="size42 verde">
-                <div>
-                    Rotinas do Trabalho de Tutoria Pedagógica
+        <div class="stepX step1" step=1>
+            <div class="titS">
+                SOY TERNIUM
+            </div>
+            <div class="subS">
+                Haga clic en las casillas para saber más acerca de cada una de las competencias.
+            </div>
+
+            <div class="listS">
+                <div class="itemS itemS1" item=1>
+                    <div class="quadS">
+                        Pasión por la <br>industria del acero
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        <ul>
+                            <li>
+                                Contagia pasión y dedicación desde su función con el desarrollo de la industria del acero.
+                            </li>
+                            <li>
+                                Busca construir relaciones duraderas con el mercado, la comunidad, los proveedores, los empleados y otros agentes locales clave, sacrificando beneficios inmediatos si fuera necessário.
+                            </li>
+                            <li>
+                                Recibe el reconocimiento de sus clientes por comprender sus desafíos y necesidades y agregar valor a la toma de decisiones.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="size34 light mt10">
-                    Confira, abaixo, os cinco passos para a realização do trabalho de tutoria.
+
+                <div class="itemS itemS2" item=2>
+                    <div class="quadS">
+                        Operación segura y sostenible
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        <ul>
+                            <li>
+                                Demuestra con su ejemplo que la seguridad es más importante que cualquier otro aspecto de la operación.
+                            </li>
+                            <li>
+                                Se cuida a sí mismo y ayuda a que otros se cuiden.
+                            </li>
+                            <li>
+                                Actúa de manera responsable para cuidar del medio ambiente y de la comunidad en la que opera.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="itemS itemS3" item=3>
+                    <div class="quadS">
+                        Curiosidad para<br> innovar
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        <ul>
+                            <li>
+                                Identifica oportunidades de innovación y/o mejora analizando los problemas con disciplina y evidencia.
+                            </li>
+                            <li>
+                                Desafía al status quo, buscando formas de hacer las cosas novedosas y más simples.
+                            </li>
+                            <li>
+                                Aprende y comparte nuevos conocimientos, herramientas, metodologías y buenas prácticas.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="itemS itemS4" item=4>
+                    <div class="quadS">
+                        Curiosidad para innovar
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        <ul>
+                            <li>
+                                Identifica oportunidades de innovación y/o mejora analizando los problemas con disciplina y evidencia.
+                            </li>
+                            <li>
+                                Desafía al status quo, buscando formas de hacer las cosas novedosas y más simples.
+                            </li>
+                            <li>
+                                Aprende y comparte nuevos conocimientos, herramientas, metodologías y buenas prácticas.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="enfeiX">
+                <div class="blocD1"></div>
+                <div class="blocD2"></div>
+                <div class="blocD3"></div>
             </div>
         </div>
 
-        <div class="cont2">
-            <div class="size36 bold">
-                Levante informações sobre a escola.
+
+        <div class="stepX step2" step=2>
+            <div class="titS">
+                SOY LÍDER
+            </div>
+            <div class="subS">
+                Haga clic en las casillas para saber más acerca de cada una de las competencias.
+            </div>
+
+            <div class="listS">
+                <div class="itemS itemS1" item=1>
+                    <div class="quadS">
+                        Agilidad
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        Tiene la capacidad de reaccionar rápido ante los cambios, de anticiparse a ellos o de iniciarlos a través de la visión, la colaboración y la creatividad.
+                    </div>
+                </div>
+
+                <div class="itemS itemS2" item=2>
+                    <div class="quadS">
+                        Emprendedor
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        Tiene la capacidad de hacer un esfuerzo adicional para alcanzar sus metas; tiene la aptitud y la actitud de emprender nuevos retos, nuevos proyectos, yendo más allá e impulsándose a dar un paso más.
+                    </div>
+                </div>
+
+                <div class="itemS itemS3" item=3>
+                    <div class="quadS">
+                        Inspiración e influencia
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        Proporciona orientación y apoyo a sus colaboradores para que desarrollen su talento y su carrera a través de recursos de aprendizaje, nuevos retos y una retroalimentación continua y constructiva. Impulsa a otros a mejorar su desempeño de manera consistente,
+                        proporcionando lineamientos claros.
+                    </div>
+                </div>
+
+                <div class="itemS itemS4" item=4>
+                    <div class="quadS">
+                        Coherencia y credibilidad
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        Trabaja honestamente, haciendo lo que dice y diciendo lo que hace, por lo sus acciones se alinean con sus palabras. Expresa opiniones válidas, útiles y basadas en la evidencia. Muestra transparencia y ética en sus acciones.
+                    </div>
+                </div>
+
+                <div class="itemS itemS5" item=5>
+                    <div class="quadS">
+                        Resiliencia
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        Ayuda a los demás a adaptarse o a recuperarse frente a la adversidad. Es visionario, reconoce los peligros inherentes a la adversidad, pero es capaz de aprovechar las oportunidades que plantea y motiva a los demás para que sigan su ejemplo.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="enfeiX">
+                <div class="blocD1"></div>
+                <div class="blocD2"></div>
+                <div class="blocD3"></div>
             </div>
         </div>
 
-        <div class="cont3">
-            <div class="size36 bold">
-                Realize as sessões
-                <br>de tutoria.
+        <div class="stepX step3" step=3>
+            <div class="titS">
+                SOY ESPECIALISTA
+            </div>
+            <div class="subS">
+                Haga clic en las casillas para saber más acerca de cada una de las competencias.
+            </div>
+
+            <div class="listS">
+                <div class="itemS itemS1" item=1>
+                    <div class="quadS">
+                        Funcionales Negocios
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        Administración | Finanzas | Jurídico | Auditorías | Comunicaciones | RRHH | Cumplimiento de conducta | Planificación | Negocios | Sistemas | Relación con inversores | Compliance y normas.
+                    </div>
+                </div>
+
+                <div class="itemS itemS2" item=2>
+                    <div class="quadS">
+                        Funcionales Industria
+                    </div>
+                    <div class="txtS animated fadeInUp">
+                        Industrial | Coord. Industrial | Mantenimiento | Calidad | Seguridad | Ambiente y eficiencia energética | Cadena de suministro | Ingeniería | Gestión industrial | Comercial internacional.
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="enfeiX">
+                <div class="blocD1"></div>
+                <div class="blocD2"></div>
+                <div class="blocD3"></div>
+            </div>
+
+        </div>
+
+        <div class="navXD">
+            <div class="btnDF">
+                <i class="fas fa-caret-left btnVolt"></i>
+            </div>
+            <div class="btnDF">
+                <i class="fas fa-caret-right btnAvanc animated infinite pulse"></i>
             </div>
         </div>
 
-        <div class="cont4">
-            <div class="size36 bold">
-                Realize a reunião inicial com o tutorado.
-            </div>
-        </div>
-
-        <div class="cont5">
-            <div class="size36 bold">
-                Elabore o plano de formação com o tutorado.
-            </div>
-        </div>
-
-        <div class="cont6">
-            <div class="size36 bold">
-                Faça o diagnóstico
-                <br>pré-plano.
-            </div>
-        </div>
-
-        <div class="cont7 branco center">
-            <div class="size36 light">
-                <span class="bold size50">Atenção!</span>
-                <br> As atividades não acabam após o quinto passo.<br> Apenas se inicia um novo ciclo, voltando à <span class="book">etapa 3</span>.
-            </div>
+        <div class="closeXD closeReturn">
+            <i class="far fa-times-circle animated infinite pulse"></i>
         </div>
 
     </div>

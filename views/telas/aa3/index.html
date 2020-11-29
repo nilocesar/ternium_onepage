@@ -11,19 +11,6 @@
             var _tela = window[course.config[course.indice].id];
             var _containerTela = $(".container" + (_tela.indice).toUpperCase());
 
-            //posiciona o elemento com base no tamanho real da imagem de fundo COVER
-            _containerTela.find(".posicionar").positionCSS({
-                containerTela: _containerTela,
-                divReferencia: _containerTela.find(".fundo"),
-                img_H: 3310,
-                img_W: 1366,
-
-            });
-
-            _containerTela.animate({
-                scrollTop: 0
-            }, 300, 'linear');
-
             if (_tela.status == false) {
                 _tela.status = true;
 
@@ -33,57 +20,27 @@
                     $("body").trigger("navegacao");
                 });
 
-
             } else {
 
             }
+
 
         }
     })
 </script>
 
 
-<div class="containerAA containerAA3 appear-animate">
+<div class="containerAA3">
 
-    <div class="closeReturn posicionar animated fadeIn delay0_4" px="1280" py="20">
-        <i class="fas fa-window-close"></i>
-    </div>
+    <div class="bloco animated fadeIn delay0_4" px="0" py="0">
 
-    <div class="step step5 posicionar animated fadeIn delay0_4" px="0" py="0">
-
-        <div class="containerVideo">
-            <div class="play animated infinite pulse"></div>
-            <a href="https://www.powtoon.com/online-presentation/eoJlEpzPGph/?utm_campaign=copy%2Bshare%2Bby%2Bowner&utm_content=eoJlEpzPGph&utm_po=22639621&utm_source=player-page-social-share&utm_medium=SocialShare&mode=presentation" target="_blank"></a>
-        </div>
-
-        <div class="cont1 verde">
-            <i class="fas fa-caret-right size50 mr20"></i>
-            <div class="bold size50">
-                Leitura do contexto escolar
-            </div>
-        </div>
-
-        <div class="cont2">
-            <div class="size40">
-                Existem diversos instrumentos de registros possíveis de analisar durante o processo de formação na escola.<br><br> Clique e veja alguns desses instrumentos.
-            </div>
-        </div>
-
-        <div class="cont3">
-            <div class="size36">
-                Esses instrumentos apontam como pensam os professores e os gestores da unidade escolar, além de apontarem a situação da aprendizagem dos estudantes.<br><br> Além dos documentos oficiais, é necessário realizar observação das ações do gestor
-                e como ele interage tanto com a rotina escolar como com a equipe escolar.
-            </div>
-        </div>
-
-        <div class="cont4">
-            <div class="size36 branco light">
-                <span class="bold">Fica a Dica!</span>
-                <br><br> Na plataforma Polo, tem uma atividade para você exercitar essa prática da leitura do contexto da escola. Não deixe de realizá-la.
-            </div>
+        <div class="stepX step1" step=1>
         </div>
 
     </div>
 
+    <div class="closeXD closeReturn">
+        <i class="far fa-times-circle animated infinite pulse"></i>
+    </div>
 
 </div>

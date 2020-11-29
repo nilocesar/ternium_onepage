@@ -51,7 +51,7 @@
 }
 
 .section4 .txt1X .txtDD {
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .section4 .txt1X .subDD {
@@ -72,6 +72,10 @@
     cursor: pointer;
     margin-top: 1.4em;
     left: 12em;
+}
+
+.section4 .mouseXS:hover {
+    background-color: #db870b;
 }
 
 .section4 .mouseXS div {

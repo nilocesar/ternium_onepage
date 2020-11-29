@@ -23,7 +23,7 @@ var PATH_CONFIG = "./data.xml";
             easydrag: "vendor/jquery.easydrag.handler.beta2",
             componentes_jquery: "vendor/componentes.jquery",
             blast: "vendor/blast",
-            wow: "vendor/wow.min",
+            viewElement: "vendor/viewElement",
             behaviorAdapt: "vendor/behaviorAdapt",
             course: 'course'
         },

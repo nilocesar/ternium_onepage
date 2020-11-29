@@ -1,3 +1,11 @@
+
+$(window).resize( function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 500);
+});
+
 var _createClass = function () {
     function defineProperties(target, props) {
         for (var i = 0; i < props.length; i++) {
@@ -2008,14 +2016,14 @@ function _classCallCheck(instance, Constructor) {
             BASE.SETTINGS.disparo.call(this, BASE);
 
             //Reset
-            $(BASE.$container).find('.' + BASE.SETTINGS.confirmarClass).css("display", "none");
+            //$(BASE.$container).find('.' + BASE.SETTINGS.confirmarClass).css("display", "none");
             var _item = $(BASE.$container).find("." + BASE.SETTINGS.itemClass);
-
             _item.attr("ativa", "false");
-            _item.removeClass(BASE.SETTINGS.itemAtivoClass);
+            
+            //_item.removeClass(BASE.SETTINGS.itemAtivoClass);
 
-            if (BASE.resposta == 0 && !BASE.tentativa && BASE.SETTINGS.tentativas > 1) {
-                /*BASE.tentativa = true;
+            /*if (BASE.resposta == 0 && !BASE.tentativa && BASE.SETTINGS.tentativas > 1) {
+                BASE.tentativa = true;
                 var _sub_questaos = BASE.SETTINGS.sub_questaos;
                 var titulo2 = BASE.SETTINGS.titulo2;
 
@@ -2030,7 +2038,7 @@ function _classCallCheck(instance, Constructor) {
                         $(item).attr("resposta", _sub_questaos[indice].valor);
                     }
 
-                });*/
+                });
             } else {
                 BASE.tentativa = false;
                 $(BASE.$container).find('.' + BASE.SETTINGS.tituloClass).text(BASE.titulo);
@@ -2043,7 +2051,11 @@ function _classCallCheck(instance, Constructor) {
                 });
 
 
-            }
+            }*/
+            
+            //
+            //reset();
+            
         }
 
 
@@ -2994,11 +3006,15 @@ function _classCallCheck(instance, Constructor) {
         }, 1000 * 0.1)
 
 
-        $(window).resize(function () {
-            clearTimeout($.data(this, 'resizeTimer'));
-            $.data(this, 'resizeTimer', setTimeout(function () {
-                dataInit()
-            }, 200));
+        // $(window).resize(function () {
+        //     clearTimeout($.data(this, 'resizeTimer'));
+        //     $.data(this, 'resizeTimer', setTimeout(function () {
+        //         dataInit()
+        //     }, 200));
+        // });
+
+        $(window).on('resizeEnd', function() {
+            dataInit();
         });
 
 
@@ -3035,22 +3051,9 @@ function _classCallCheck(instance, Constructor) {
                 x: parseInt(pointer.attr("px")),
                 y: parseInt(pointer.attr("py"))
             };
-            
-            
-            var _w = course.width;
-            var _h = course.height;
-            var _screenW = $(window).width();
-            var _screenH = $(window).height();
-
-            var scale = Math.min(
-                _screenW / _w,
-                _screenH / _h
-            );
-            
-            
 
             var windowWidth = $(window).width();
-            var windowHeight = _h * scale;
+            var windowHeight = $(window).height();
 
             // Get largest dimension increase
             var xScale = windowWidth / image.width;
@@ -3062,11 +3065,11 @@ function _classCallCheck(instance, Constructor) {
             if (xScale > yScale) {
                 // The image fits perfectly in x axis, stretched in y
                 scale = xScale;
-                //yOffset = (windowHeight - (image.height * scale)) / 2;
+                yOffset = (windowHeight - (image.height * scale)) / 2;
             } else {
                 // The image fits perfectly in y axis, stretched in x
                 scale = yScale;
-                //xOffset = (windowWidth - (image.width * scale)) / 2;
+                xOffset = (windowWidth - (image.width * scale)) / 2;
             }
 
 
@@ -3076,7 +3079,6 @@ function _classCallCheck(instance, Constructor) {
             var prop = true;           
             if( pointer.children().length >=1 ||  pointer.text().length > 0 || pointer.css("background-size") == "auto" ) 
                 prop = false;
-
 
             ///PROP
             if (prop) {
@@ -3089,7 +3091,6 @@ function _classCallCheck(instance, Constructor) {
 
                 pointer.css('width', _wInit * scale);
                 pointer.css('height', _hInit * scale);
-                
             } else {
 
                 pointer.css({
@@ -3108,7 +3109,6 @@ function _classCallCheck(instance, Constructor) {
                 });
                 
                 
-                
                 pointer.css({
                     scale: scale 
                 });
@@ -3119,24 +3119,6 @@ function _classCallCheck(instance, Constructor) {
                      motion(_type, pointer, _x, _y);
                 }
             }
-            
-            /*if( _screenH > _screenW )
-            {
-                $(BASE.SETTINGS.containerTela).css("top", "50%");
-                var _conH = parseInt($( BASE.SETTINGS.divReferencia ).css("height"));
-              
-                
-                $(BASE.SETTINGS.containerTela).css("marginTop", (_conH )/2 * -1  );
-            }
-            else
-            {
-                $(BASE.SETTINGS.containerTela).css("top", 0);
-                $(BASE.SETTINGS.containerTela).css("marginTop", 0  );
-            }*/
-            
-            $(BASE.SETTINGS.containerTela).css("top", 0);
-            $(BASE.SETTINGS.containerTela).css("marginTop", 0  );
-            
 
         }
 
@@ -3207,6 +3189,334 @@ function _classCallCheck(instance, Constructor) {
 
 
     }
+
+
+    /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    //  ANIMAR                                                         //
+    /////////////////////////////////////////////////////////////////////
+
+    $.fn.tripa = function (options) {
+
+        var BASE = {};
+
+        var settings = $.extend({
+            time: 0.3,
+            time2: 0.6,
+            keyup: true,
+            mousewheel: true,
+            mobile: true,
+            change: function(e){},
+            complete: function(){}
+        }, options);
+
+        BASE.SETTINGS = settings;
+        BASE.THIS = this;
+        BASE.$container = document.querySelector(BASE.THIS.selector);
+
+        $(window).focus();
+        $("body").on('navegacaoComplete', function() {
+            $(window).focus();
+            tripaResert();
+        });
+
+        var _keyup = BASE.SETTINGS.keyup;
+        var _mousewheel = BASE.SETTINGS.mousewheel;
+        var _mobile = BASE.SETTINGS.mobile;
+        var _time = BASE.SETTINGS.time;
+        var _time2 = BASE.SETTINGS.time2;
+        var _tripaContainer = $( BASE.THIS );
+        _tripaContainer.attr('navBlock', false );
+        _tripaContainer.attr('currentStrep', 1 );
+
+        
+        var _tripaAll = _tripaContainer.find(".tripa").length;
+
+        var e = {
+            currentTela:1
+        };
+        BASE.SETTINGS.change(e);
+        
+        _tripaContainer.find(".tripa").each(function(indice,item){
+            var _step = $(item).attr('step');
+            
+            if(_step == 1){
+                $(item).find('.prevTripa').css('display', 'none');
+            }
+
+            if(_step == _tripaAll){
+                $(item).find('.nextTripa').css('display', 'none');
+            }
+        });
+
+
+        _tripaContainer.find(".nextTripa").on('click', function() {
+            nextTripa();
+        });
+
+
+        _tripaContainer.find(".prevTripa").on('click', function() {
+            prevTripa();
+        });
+
+
+        function tripaResert(){
+            _tripaContainer.attr('navBlock', false );
+            _tripaContainer.attr('currentStrep', 1 );
+
+            _tripaContainer.find(".tripa").css('top', '0');
+        }
+
+        function nextTripa(){
+
+            if( _tripaContainer.attr('navBlock') == "true" )
+                return false;
+
+            if( parseInt( _tripaContainer.attr('currentStrep') ) == _tripaAll ){
+                return false;
+            }
+            
+
+            var _step = parseInt( _tripaContainer.attr('currentStrep') );
+
+            var _tripa = _tripaContainer.find('.tripa' + _step ); 
+
+            var _next = _step + 1;
+            _tripaContainer.attr('currentStrep', _next);
+
+            var e = {
+                currentTela : _next
+            };
+            BASE.SETTINGS.change(e);
+
+
+            if( _next == _tripaAll ){
+                BASE.SETTINGS.complete();
+            }
+
+            var _tripaNext = _tripaContainer.find( ".tripa"+ _next);
+            var _heightTripa = parseInt( _tripa.css('height') );
+            var _heightTripaNext = parseInt( _tripaNext.css('height') );
+            
+            var _mov = ( _heightTripa  * (_next - 1 )  ) * -1;
+            var _movNext = ( _heightTripaNext  * (_next - 1 )  ) * -1; 
+            _tripa.animate({ top: _mov }, 1000*_time, function() { });
+            _tripaNext.animate({ top: _movNext }, 1000*_time, function() { });
+        }
+
+        function prevTripa(){
+
+            if( _tripaContainer.attr('navBlock') == "true" )
+                return false;
+
+            if( parseInt( _tripaContainer.attr('currentStrep') ) == 1 ){
+                return false;
+            }
+
+            var _step = parseInt( _tripaContainer.attr('currentStrep'));
+            var _tripa = _tripaContainer.find('.tripa' + _step );
+            var _prev = _step - 1;
+            _tripaContainer.attr('currentStrep', _prev);
+
+            var e = {
+                currentTela : _prev
+            };
+            BASE.SETTINGS.change(e);
+
+            var _tripaPrev = _tripaContainer.find( ".tripa"+ _prev);
+            var _heightTripa = parseInt( _tripa.css('height') );
+            var _heightTripaPrev = parseInt( _tripaPrev.css('height') );
+            
+            var _mov = ( _heightTripa  * ( _prev - 1 )  ) * -1; 
+            var _movPrev = ( _heightTripaPrev  * ( _prev - 1 )  ) * -1; 
+            _tripa.animate({ top: _mov }, 1000*_time, function() { });
+            _tripaPrev.animate({ top: _movPrev }, 1000*_time, function() { });
+        }
+
+        controlNav();
+        function controlNav() {
+
+            var KEY_DOWN = 40;
+            var KEY_UP = 38;
+
+
+            $.fn.scrollEnd = function (callback, timeout) {
+
+                var $this = $(this);
+
+                if( _keyup ){
+
+                    $(this).on("keyup", function (e) {
+                        e.preventDefault;
+
+                        if( _tripaContainer.attr('navBlock') == true )
+                            return false;
+
+                        if (e.keyCode == KEY_UP) {
+
+                            prevTripa();
+                            _tripaContainer.attr('navBlock' , true);
+                            //$public.prev("");
+                            //$parent.navBlock = true;
+
+                            if ($this.data('scrollTimeout')) {
+                                clearTimeout($this.data('scrollTimeout'));
+                            }
+                            $this.data('scrollTimeout', setTimeout(callback, timeout));
+
+                        } else if (e.keyCode == KEY_DOWN) {
+
+                            //$public.next("");
+                            //$parent.navBlock = true;
+
+                            nextTripa();
+                            _tripaContainer.attr('navBlock' , true);
+
+                            if ($this.data('scrollTimeout')) {
+                                clearTimeout($this.data('scrollTimeout'));
+                            }
+                            $this.data('scrollTimeout', setTimeout(callback, timeout));
+                        }
+
+                    }); 
+                }
+
+
+                //Firefox
+                if( _mousewheel ){
+
+                    $(this).bind('DOMMouseScroll', function (e) {
+                        e.preventDefault;
+                        if (e.originalEvent.detail > 0) {
+                            //scroll down
+                            //console.log('Down');
+                            //$public.next("");
+                            //$parent.navBlock = true;
+
+                            nextTripa();
+                            _tripaContainer.attr('navBlock' , true);
+
+                        } else {
+                            //scroll up
+                            //console.log('Up');
+                            //$public.prev("");
+                            //$parent.navBlock = true;
+
+                            prevTripa();
+                            _tripaContainer.attr('navBlock' , true);
+                        }
+
+                        if ($this.data('scrollTimeout')) {
+                            clearTimeout($this.data('scrollTimeout'));
+                        }
+                        $this.data('scrollTimeout', setTimeout(callback, timeout));
+
+                        //prevent page fom scrolling
+                        return false;
+                    });
+
+                    //IE, Opera, Safari
+                
+                    $(this).bind('mousewheel', function (e) {
+
+                        e.preventDefault;
+                        if (e.originalEvent.wheelDelta < 0) {
+                            //scroll down
+                            /* console.log('Down');*/
+                            //$public.next("");
+                            //$parent.navBlock = true;
+    
+                            nextTripa();
+                            _tripaContainer.attr('navBlock' , true);
+    
+                        } else {
+                            //scroll up
+                            /*console.log('Up');*/
+                            //$public.prev("");
+                            //$parent.navBlock = true;
+                            prevTripa();
+                            _tripaContainer.attr('navBlock' , true);
+                        }
+    
+                        if ($this.data('scrollTimeout')) {
+                            clearTimeout($this.data('scrollTimeout'));
+                        }
+                        $this.data('scrollTimeout', setTimeout(callback, timeout));
+    
+                        //prevent page fom scrolling
+                        return false;
+                    });
+                }
+               
+
+            };
+
+            if( _mobile ) 
+            {
+
+                var myElement = document.getElementsByTagName("BODY")[0];
+
+                // create a simple instance
+                // by default, it only adds horizontal recognizers
+                var mc = new Hammer(myElement);
+
+                // let the pan gesture support all directions.
+                // this will block the vertical scrolling on a touch-device while on the element
+                mc.get('pan').set({
+                    direction: Hammer.DIRECTION_ALL
+                });
+
+                // listen to events...
+
+                var _type = "";
+                mc.on("panup pandown panend", function (ev) {
+
+                    if (ev.type == "panup")
+                        _type = "up"
+                    else if (ev.type == "pandown")
+                        _type = "down"
+
+                    if (ev.type == "panend") {
+                        if (_type == "up") {
+
+                            nextTripa();
+                            _tripaContainer.attr('navBlock' , true);
+                            setTimeout(function () {
+                                _tripaContainer.attr('navBlock' , false);
+                                $(window).focus();
+                            }, 1000*_time2);
+
+                        } else {
+
+                            prevTripa();
+                            _tripaContainer.attr('navBlock' , true);
+                            setTimeout(function () {
+                                _tripaContainer.attr('navBlock' , false);
+                                $(window).focus();
+                            }, 1000*_time2);
+
+                        }
+                    }
+
+                });
+
+            }
+
+
+            $(window).scrollEnd(function () {
+            
+                _tripaContainer.attr('navBlock' , false);
+                $(window).focus();
+                console.log('stopped scrolling');
+            }, 1000*_time2);
+
+        }    
+    }
+
 
     /////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////

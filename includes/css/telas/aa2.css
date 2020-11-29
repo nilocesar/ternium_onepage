@@ -1,61 +1,254 @@
-.containerAA5{
-  background-color: #e8e8e8;  
+.containerAA2 {}
+
+.containerAA2 .bloco {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding-top: 2em;
 }
 
-.step7{
-  position: absolute;
-  z-index: 9998;
-  width: 1366px;
-  height: 2219px;
-  background: url(../../img/step7.jpg) no-repeat;
-  background-size: 100%;
+.containerAA2 .stepX {
+    position: relative;
+    /* height: 92vh; */
+    height: 40em;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: #fff;
 }
 
-.step7 .cont1{
-  position: absolute;
-  top: 300px;
-  left: 195px;
-  position: absolute;
-  width:1050px;
-  border: 2px solid #24a7bf;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+.containerAA2 .titS {
+    position: relative;
+    font-size: 2em;
 }
 
-.step7 .cont2{
-  position: absolute;
-  top: 480px;
-  left: 55px;
-  width:1200px;
+.containerAA2 .listS {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    /* align-items: center; */
 }
 
-.step7 .cont3{
-  position: absolute;
-  top: 600px;
-  left: 55px;
-  width:1200px;
-  background-color: #24a7bf;
-  padding: 40px;
+.containerAA2 .listS ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5em;
+    margin-left: 1.3em;
 }
 
-.step7 .cont3 div{
-  padding: 20px;
-  border: 3px dotted #fff;
+.containerAA2 .itemS {
+    height: 70vh;
 }
 
-.step7 .cont4{
-  position: absolute;
-  top: 1320px;
-  left: 90px;
-  width:750px;
+@media all and (orientation: portrait) {
+    .containerAA2 .bloco {
+        justify-content: center;
+    }
+    .containerAA2 .stepX {
+        height: 40em;
+    }
 }
 
-.step7 .cont5{
-  position: absolute;
-  top: 2120px;
-  left: 90px;
-  width:1100px;
+.containerAA2 .step1 .itemS {
+    position: relative;
+    width: 22vw;
+    padding: 1vw;
+}
+
+.containerAA2 .step1 .quadS {
+    position: relative;
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #FF9900;
+    font-size: 1.4em;
+    padding: 0.2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.containerAA2 .enfeiX {
+    position: absolute;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0em;
+}
+
+.containerAA2 .step1 .blocD1 {
+    position: relative;
+    width: 70%;
+    height: 1em;
+    background-color: #FF9900;
+}
+
+.containerAA2 .step1 .blocD2 {
+    position: relative;
+    width: 10%;
+    height: 1em;
+    background-color: #FF3300;
+}
+
+.containerAA2 .step1 .blocD3 {
+    position: relative;
+    width: 10%;
+    height: 1em;
+    background-color: #00B451;
+}
+
+.containerAA2 .step2 .itemS {
+    position: relative;
+    width: 18vw;
+    padding: 1vw;
+}
+
+.containerAA2 .step2 .quadS {
+    position: relative;
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #FF3300;
+    font-size: 1.4em;
+    padding: 0.2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.containerAA2 .step2 .blocD1 {
+    position: relative;
+    width: 10%;
+    height: 1em;
+    background-color: #FF9900;
+}
+
+.containerAA2 .step2 .blocD2 {
+    position: relative;
+    width: 70%;
+    height: 1em;
+    background-color: #FF3300;
+}
+
+.containerAA2 .step2 .blocD3 {
+    position: relative;
+    width: 10%;
+    height: 1em;
+    background-color: #00B451;
+}
+
+.containerAA2 .step3 .listS {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    /* align-items: center; */
+}
+
+.containerAA2 .step3 .itemS {
+    position: relative;
+    width: 25vw;
+    padding: 1vw;
+}
+
+.containerAA2 .step3 .quadS {
+    position: relative;
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #00B451;
+    font-size: 1.4em;
+    padding: 0.2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.containerAA2 .step3 .blocD1 {
+    position: relative;
+    width: 10%;
+    height: 1em;
+    background-color: #FF9900;
+}
+
+.containerAA2 .step3 .blocD2 {
+    position: relative;
+    width: 10%;
+    height: 1em;
+    background-color: #FF3300;
+}
+
+.containerAA2 .step3 .blocD3 {
+    position: relative;
+    width: 70%;
+    height: 1em;
+    background-color: #00B451;
+}
+
+.containerAA2 .navXD {
+    position: absolute;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    bottom: 1em;
+}
+
+.containerAA2 .btnDF {
+    position: relative;
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5em;
+    color: #fff;
+    /* background-color: #00B451; */
+}
+
+.containerAA2 .btnDF:hover {
+    color: rgba(255, 255, 255, 0.531);
+}
+
+.containerAA2 .btnDF i {
+    cursor: pointer;
+}
+
+.containerAA2 .closeXD {
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5em;
+    color: #fff;
+    top: 1vw;
+    right: 4vw;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.containerAA2 .closeXD:hover {
+    color: rgba(255, 255, 255, 0.531);
+}
+
+.containerAA2 .inativoQuadS {
+    pointer-events: none;
+    opacity: 0.2;
+    filter: grayscale(100%);
 }

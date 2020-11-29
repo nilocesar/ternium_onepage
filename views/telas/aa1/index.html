@@ -43,51 +43,42 @@
 
     function step(_containerTela, course, _tela) {
 
-        // var vid = document.getElementById("video1");
-        // vid.onended = function() {
-        //     // course.liberarNavegacao();
-        // };
+        _containerTela.visibleElement(0.2); // jquery - delay pradrão
 
+        _containerTela.find('.videoX').on('playing', function() {
 
-        // _containerTela.find('.toggle').on('click', function() {
+            var _this = this;
+            _containerTela.find('.videoX').each(function(indice, item) {
+                if (_this != item) {
+                    $(item)[0].pause();
+                }
+            });
 
-        //     if ($(this).hasClass('on')) {
-        //         $(this).removeClass('on');
-        //     } else {
-        //         $(this).addClass('on');
-        //     }
+        })
 
-        //     _containerTela.attr("tabindex", -1).focus();
-
-        // });
 
         _containerTela.find('.item').on('click', function() {
             var _item = $(this).attr('step');
             var _step = _containerTela.find('.' + _item);
-
-            // _containerTela.find('.toggle').removeClass('on');
-            // _containerTela.attr("tabindex", -1).focus();
-
-            //
             scrollStep(_containerTela, _step);
         });
 
 
-        // _containerTela.find('.it').on('click', function() {
+        _containerTela.find('.it').on('click', function() {
 
-        //     var _tela = $(this).attr("tela");
+            var _tela = $(this).attr("tela");
 
-        //     $.each(course.config, function(indice, item) {
+            $.each(course.config, function(indice, item) {
 
-        //         if ((item.id).toUpperCase() == _tela.toUpperCase()) {
+                if ((item.id).toUpperCase() == _tela.toUpperCase()) {
 
-        //             course.indice = item.indice;
-        //             $("body").attr("nav", "go");
-        //             $("body").trigger("navegacao");
-        //         }
-        //     });
+                    course.indice = item.indice;
+                    $("body").attr("nav", "go");
+                    $("body").trigger("navegacao");
+                }
+            });
 
-        // });
+        });
 
         // setTimeout(function() {
         //     course.completeScorm();
@@ -97,18 +88,18 @@
 </script>
 
 
-<div class="containerAA containerAA1 appear-animate">
+<div class="containerAA containerAA1">
 
     <div class="logoA"></div>
-    <div class="menuA up item" step="stepMenu">
+    <div class="menuA up item" step="stepMenu" vw="fadeInUp">
         <i class="fas fa-caret-up"></i> &emsp;MENÚ
     </div>
 
     <div class="stepHome">
-        <div class="mouseX"></div>
+        <div class="mouseX" vw="fadeInUp"></div>
 
-        <div class="stepHomeTxt">
-            <div class="barra"></div>
+        <div class="stepHomeTxt" vw="fadeInRight">
+            <div class="barra" vw="fadeInUp" vw-delay=1></div>
 
             <div class="ti">PROGRAMA DE DESAROLLO DE LÍDERES DE PLANTA</div>
 
@@ -122,27 +113,27 @@
     </div>
 
     <div class="stepMenu center cinza1 bold">
-        <div class="titM">MENÚ</div>
+        <div class="titM" vw="fadeIn" vw-delay=0>MENÚ</div>
         <div class="blocM center">
-            <div class="icoX icoX1 item" step="section1">
+            <div class="icoX icoX1 item" step="section1" vw="zoomIn" vw-delay=0.2>
                 <div class="idx"></div>
                 <div class="txtX">
                     MENSAJE DE<br> LA GESTIÓN
                 </div>
             </div>
-            <div class="icoX icoX2 item" step="section2">
+            <div class="icoX icoX2 item" step="section2" vw="zoomIn" vw-delay=0.4>
                 <div class="idx"></div>
                 <div class="txtX">
                     COMPETENCIAS<br> TERNIUM
                 </div>
             </div>
-            <div class="icoX icoX3 item" step="section3">
+            <div class="icoX icoX3 item" step="section3" vw="zoomIn" vw-delay=0.6>
                 <div class="idx"></div>
                 <div class="txtX">
                     JORNADA DE<br> APRENDIZAJE
                 </div>
             </div>
-            <div class="icoX icoX4 item" step="section4">
+            <div class="icoX icoX4 item" step="section4" vw="zoomIn" vw-delay=0.8>
                 <div class="idx"></div>
                 <div class="txtX">
                     APRENDIZAJE<br> ACTIVO
@@ -152,18 +143,18 @@
     </div>
 
     <div class="section1">
-        <div class="tiXS bold branco">
+        <div class="tiXS bold branco" vw="fadeInLeft">
             MENSAJE DE LA GESTIÓN
         </div>
 
         <div class="seleCX">
             <div class="baseX1">
-                <div class="video1X">
-                    <video id="video1" controls width="100%" height="100%">
+                <div class="video1X" vw="fadeInLeft" vw-delay=0.3>
+                    <video id="video1" class="videoX" controls width="100%" height="100%">
                     <source src="anexos/video1.mp4">
                 </video>
                 </div>
-                <div class="txt1X bold cinza1">
+                <div class="txt1X bold cinza1" vw="fadeInUp" vw-delay=0.4>
                     <h1>
                         La relevancia del programa<br> para Líderes de Planta y<br> Ternium.
                     </h1>
@@ -174,11 +165,11 @@
 
 
     <div class="section2">
-        <div class="tiXS bold branco">
+        <div class="tiXS bold branco" vw="fadeInLeft">
             COMPETENCIAS TERNIUM
         </div>
 
-        <div class="seleCX">
+        <div class="seleCX" vw="fadeInUp" vw-delay=0.4>
             <div class="baseX1">
 
                 <div class="txt1X branco">
@@ -188,13 +179,13 @@
                     <div class="txtDD subDD">
                         Tales competencias han sido una de las bases para el desarrollo del PDLP y deben practicarse y permanecer siempre vivas en el día a día.
                     </div>
-                    <div class="mouseXS">
+                    <div class="mouseXS it" tela="AA2">
                         <div class="animated infinite pulse"></div>
                     </div>
                 </div>
 
-                <div class="video1X">
-                    <video id="video1" controls width="100%" height="100%">
+                <div class="video1X" vw="zoomIn" vw-delay=0.8>
+                    <video id="video2" class="videoX" controls width="100%" height="100%">
                     <source src="anexos/video1.mp4">
                 </video>
                 </div>
@@ -206,21 +197,22 @@
 
 
     <div class="section3">
-        <div class="tiXS bold branco">
+        <div class="tiXS bold branco" vw="fadeInLeft">
             JORNADA DE APRENDIZAJE
         </div>
 
         <div class="seleCX">
             <div class="baseX1">
 
-                <div class="txt1X branco">
+                <div class="txt1X branco" vw="fadeInUp" vw-delay=0.4>
                     <div class="blocoXDBarra"></div>
                     <div class="blocoXD">
                         Teniendo en cuenta el Modelo Educativo Ternium, la propuesta de aprendizaje para el PDLP se centra principalmente en los Resultados, la Experiencia y <br>en un Proceso de Desarrollo Continuo.
                     </div>
 
                     <div class="mapaD">
-                        <div class="mapaImg"></div>
+
+                        <div class="mapaImg it" tela="AA3"></div>
                         <div class="mapaPDF">
                             <div class="icoPDF">
                                 <div class="icoSD"></div>
@@ -228,12 +220,14 @@
                             <div class="txtPDF">
                                 Haga clic en la imagen para ampliar o en el icono al lado para descargar el archivo PDF.
                             </div>
+                            <a href="anexos/modelo.pdf" download></a>
                         </div>
+
                     </div>
 
                 </div>
 
-                <div class="imgX">
+                <div class="imgX" vw="zoomIn" vw-delay=0.8>
 
                 </div>
 
@@ -243,24 +237,24 @@
     </div>
 
     <div class="section4">
-        <div class="tiXS bold branco">
+        <div class="tiXS bold branco" vw="fadeInLeft">
             APRENDIZAJE ACTIVO
         </div>
 
-        <div class="seleCX">
+        <div class="seleCX" vw="fadeInUp" vw-delay=0.4>
             <div class="baseX1">
 
                 <div class="txt1X branco">
                     <div class="txtDD">
                         Para que su jornada sea aún más productiva y efectiva, le proponemos que a lo largo de su desarrollo, después de la capacitación en cada uno de los temas, registre qué y cómo está poniendo en práctica lo aprendido.
                     </div>
-                    <div class="mouseXS">
+                    <div class="mouseXS it" tela="AA4">
                         <div class="animated infinite pulse"></div>
                     </div>
                 </div>
 
-                <div class="video1X">
-                    <video id="video1" controls width="100%" height="100%">
+                <div class="video1X" vw="zoomIn" vw-delay=0.8>
+                    <video id="video3" class="videoX" controls width="100%" height="100%">
                     <source src="anexos/video3.mp4">
                 </video>
                 </div>
@@ -273,7 +267,7 @@
 
 
     <div class="section5">
-        <div class="stepTxt">
+        <div class="stepTxt" vw="fadeInLeft" vw-delay=0.2>
             <div class="ti bold">
                 PROTAGONISMO
             </div>
@@ -281,7 +275,7 @@
                 La dedicación, la actitud activa y el protagonismo son fundamentales para que el proceso de aprendizaje sea efectivo y tenga un impacto positivo tanto para la rutina como para el crecimiento profesional y personal de cada individuo.
             </div>
         </div>
-        <div class="stepTxt2 bold">
+        <div class="stepTxt2 bold" vw="fadeInUp" vw-delay=0.8>
             ¡Esperamos que su jornada de aprendizaje sea una experiencia única y memorable!
         </div>
     </div>
