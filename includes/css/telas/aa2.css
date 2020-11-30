@@ -47,15 +47,6 @@
     height: 70vh;
 }
 
-@media all and (orientation: portrait) {
-    .containerAA2 .bloco {
-        justify-content: center;
-    }
-    .containerAA2 .stepX {
-        height: 40em;
-    }
-}
-
 .containerAA2 .step1 .itemS {
     position: relative;
     width: 22vw;
@@ -251,4 +242,13 @@
     pointer-events: none;
     opacity: 0.2;
     filter: grayscale(100%);
+}
+
+@media all and (orientation: portrait) {
+    .containerAA2 .bloco {
+        justify-content: center;
+    }
+    .containerAA2 .stepX {
+        height: 40em;
+    }
 }

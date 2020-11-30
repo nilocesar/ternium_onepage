@@ -19,8 +19,8 @@
         <height>768</height>
         
         <compilador>
-            <titulo>itau</titulo>
-            <zip_name>itau</zip_name>
+            <titulo>ternium</titulo>
+            <zip_name>ternium</zip_name>
             <padrao>scorm1.2</padrao>
             <resize>sim</resize>
             <speed>nao</speed>

@@ -1,30 +1,12 @@
-/*--------------------------*/
-
-
-/*FRAMEWORKS
-----------------------------*/
+/* @import url("bootstrap-reboot.min.css"); */
 
 @import url("reset.css");
-@import url("bootstrap-grid.min.css");
-@import url("bootstrap-reboot.min.css");
-@import url("bootstrap-slider.min.css");
-@import url("bootstrap.min.css");
 @import url("icones.css");
 @import url("fonts.css");
 @import url("animate.css");
-@import url("slick.css");
-@import url("balloon.min.css");
 @import url("colors.css");
 @import url("props.css");
-
-/*--------------------------*/
-
-
-/*INTERFACE
-----------------------------*/
-
 @import url("interface.css");
-@import url("custom.css");
 @import url("debug.css");
 
 /*--------------------------*/
@@ -44,12 +26,3 @@
 @import url("telas/aa3.css");
 @import url("telas/aa4.css");
 @import url("telas/aa5.css");
-
-/*--------------------------*/
-
-
-/*PRINT
-----------------------------*/
-
-
-/*@import url("telas/print.css");*/

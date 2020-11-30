@@ -93,8 +93,8 @@ define(['jquery', 'nicescroll'], function ($) {
                 })
 
                 //
-                var _heightTop = parseInt($('.topBase').css("height"));
-                $('.telaBase').css("height", window.innerHeight - _heightTop);
+                // var _heightTop = parseInt($('.topBase').css("height"));
+                // $('.telaBase').css("height", window.innerHeight - _heightTop);
 
             })
 

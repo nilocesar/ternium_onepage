@@ -1,22 +1,3 @@
-* {
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-size: 1em;
-}
-
-h1 {
-    font-size: 2.2em;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-p {
-    font-size: 1.4em;
-}
-
 .containerAA {
     position: fixed;
     padding: 0;

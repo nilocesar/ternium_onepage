@@ -243,8 +243,10 @@ define(['jquery', 'jquery_scorm', 'modernizr', 'imagesloaded', 'velocity', 'comp
 
             window.parent.iframe.preloaderComplete();
 
-            //
+            // Essa classe junta com a funçao adaptativa
+            $("body").addClass('mr-size'); // mr-size -> contain | mr-cover-size -> cover
             window.BehaviorAdapt(1920, 1080, 22); // largura, altura, font-size base 
+            // Essa classe junta com a funçao adaptativa
 
             //Iniciar após o carregamento inicial
             $("body").attr("nav", "init");
